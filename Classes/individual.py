@@ -30,4 +30,4 @@ class Individual:
         return self
 
     def __str__(self):
-        return "Genes: " + str(self.genes) + " Fitness: " + str(self.calculate_fitness())
+        return "Genes: " + str(self.genes) + "\tFitness: " + str(self.calculate_fitness())
