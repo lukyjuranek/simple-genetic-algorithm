@@ -33,15 +33,15 @@ class Population:
         return self.population[:2]
 
     def crossover(self, parents: list):
-        # Creates individuals by crossing over two best individuals
+        # Creates individuals by crossing over two best individuals and repairs repeating genes
     
-        # Choose a random crossover point
+        # Chooses a random crossover point
         crossover_point = random.randint(1, 5)
         
-        # Create two new individuals by combining genes of the parents
+        # Creates two new individuals by combining genes of the parents
         child1 = parents[0].genes[:crossover_point] + parents[1].genes[crossover_point:]
         child2 = parents[1].genes[:crossover_point] + parents[0].genes[crossover_point:]
-        # Replace repeating genes
+        # Replaces repeating genes(gene repair)
         for i, gene in enumerate(child1):
             while child1.count(gene) > 1:
                 index = child1.index(gene)

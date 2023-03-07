@@ -22,7 +22,7 @@ class Individual:
     def mutate(self):
         # Swaps two random genes
         gene1, gene2 = random.sample(range(len(self.genes)), 2)
-        # Makes sure the two genes are not the same
+        # Makes sure the two genes are not the same one. Can't swap a gene with itself
         while gene1 == gene2:
             gene2 = random.randint(0, len(self.genes) - 1)
 
